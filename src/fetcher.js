@@ -9,7 +9,7 @@ const AsyncFunction = exampleAsyncFunction.constructor
  * Base of the fetchers.
  * This fetcher just get the data from fixtures.
  *
- * @todo: move code to package
+ * @todo: auto handle file / http
  */
 class Fetcher {
   constructor () {
