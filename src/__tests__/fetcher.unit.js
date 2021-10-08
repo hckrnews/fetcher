@@ -8,7 +8,6 @@ const fetch = () => ({
   status: 200,
   json: async () => example
 })
-const DefaultFetcher = fetcher('default')
 
 const testCases = [
   {
@@ -16,18 +15,28 @@ const testCases = [
     status: 200,
     url: 'https://gazelle.nl',
     path: { channel: 'pb1001', sku: '206003L' },
+    fetcherName: 'default',
+    expectedResult: example
+  },
+  {
+    description: 'It should use the default fetcher if the fetcher isnt found',
+    status: 200,
+    url: 'https://gazelle.nl',
+    path: { channel: 'pb1001', sku: '206003L' },
+    fetcherName: 'notexisting',
     expectedResult: example
   }
 ]
 
 describe.each(testCases)(
   'Test the Fetcher helper with test cases',
-  ({ description, status, url, path, expectedResult }) => {
+  ({ description, status, url, path, fetcherName, expectedResult }) => {
     it(description, async () => {
       const fetch = () => ({
         status,
         json: async () => example
       })
+      const DefaultFetcher = fetcher(fetcherName)
       const currentFetcher = DefaultFetcher.create({ fetch })
       const results = await currentFetcher.get({ url, path })
 
@@ -42,6 +51,7 @@ const errorTestCases = [
     status: 400,
     url: 'https://gazelle.nl',
     path: { channel: 'pb1001', sku: '206003L' },
+    fetcherName: 'default',
     expectedResult: 'Wrong data send to the server, url: https://gazelle.nl//channel/pb1001/sku/206003L, status: 400'
   },
   {
@@ -49,6 +59,7 @@ const errorTestCases = [
     status: 401,
     url: 'https://gazelle.nl',
     path: { channel: 'pb1001', sku: '206003L' },
+    fetcherName: 'default',
     expectedResult: 'Wrong data send to the server, url: https://gazelle.nl//channel/pb1001/sku/206003L, status: 401'
   },
   {
@@ -56,6 +67,7 @@ const errorTestCases = [
     status: 403,
     url: 'https://gazelle.nl',
     path: { channel: 'pb1001', sku: '206003L' },
+    fetcherName: 'default',
     expectedResult: 'Wrong data send to the server, url: https://gazelle.nl//channel/pb1001/sku/206003L, status: 403'
   },
   {
@@ -63,6 +75,7 @@ const errorTestCases = [
     status: 404,
     url: 'https://gazelle.nl',
     path: { channel: 'pb1001', sku: '206003L' },
+    fetcherName: 'default',
     expectedResult: 'Page not found on the server, url: https://gazelle.nl//channel/pb1001/sku/206003L, status: 404'
   },
   {
@@ -70,6 +83,7 @@ const errorTestCases = [
     status: 405,
     url: 'https://gazelle.nl',
     path: { channel: 'pb1001', sku: '206003L' },
+    fetcherName: 'default',
     expectedResult: 'Wrong data send to the server, url: https://gazelle.nl//channel/pb1001/sku/206003L, status: 405'
   },
   {
@@ -77,6 +91,7 @@ const errorTestCases = [
     status: 408,
     url: 'https://gazelle.nl',
     path: { channel: 'pb1001', sku: '206003L' },
+    fetcherName: 'default',
     expectedResult: 'Cannot connect to the server, url: https://gazelle.nl//channel/pb1001/sku/206003L, status: 408'
   },
   {
@@ -84,6 +99,7 @@ const errorTestCases = [
     status: 422,
     url: 'https://gazelle.nl',
     path: { channel: 'pb1001', sku: '206003L' },
+    fetcherName: 'default',
     expectedResult: 'Wrong data send to the server, url: https://gazelle.nl//channel/pb1001/sku/206003L, status: 422'
   },
   {
@@ -91,6 +107,7 @@ const errorTestCases = [
     status: 500,
     url: 'https://gazelle.nl',
     path: { channel: 'pb1001', sku: '206003L' },
+    fetcherName: 'default',
     expectedResult: 'Cannot access the server, url: https://gazelle.nl//channel/pb1001/sku/206003L, status: 500'
   },
   {
@@ -98,18 +115,20 @@ const errorTestCases = [
     status: 503,
     url: 'https://gazelle.nl',
     path: { channel: 'pb1001', sku: '206003L' },
+    fetcherName: 'default',
     expectedResult: 'Cannot access the server, url: https://gazelle.nl//channel/pb1001/sku/206003L, status: 503'
   }
 ]
 
 describe.each(errorTestCases)(
   'Test the Fetcher helper with error test cases',
-  ({ description, status, url, path, expectedResult }) => {
+  ({ description, status, url, path, fetcherName, expectedResult }) => {
     it(description, async () => {
       const fetch = () => ({
         status,
         json: async () => example
       })
+      const DefaultFetcher = fetcher(fetcherName)
       const currentFetcher = DefaultFetcher.create({ fetch })
 
       await expect(currentFetcher.get({ url, path }))
@@ -130,6 +149,19 @@ describe('Test a custom Fetcher', () => {
     const testFetcher = NewTestFetcher.create({ fetch, logger })
     const results = await testFetcher.get({ url: 'https://gazelle.nl' })
     expect(results).toEqual(42)
+  })
+
+  it('It should use the default fetcher if the fetcher isnt found', async () => {
+    const fetchers = {
+      test: TestFetcher
+    }
+    const NewTestFetcher = fetcher('test2', fetchers)
+    const logger = {
+      debug: (message) => console.debug(message)
+    }
+    const testFetcher = NewTestFetcher.create({ fetch, logger })
+    const results = await testFetcher.get({ url: 'https://gazelle.nl' })
+    expect(results).toEqual(example)
   })
 
   it('It should run the get on the custom fetcher', async () => {
@@ -187,6 +219,7 @@ describe('Test a custom Fetcher', () => {
       status: 418,
       json: async () => example
     })
+    const DefaultFetcher = fetcher()
     const currentFetcher = DefaultFetcher.create({ fetch })
 
     try {
