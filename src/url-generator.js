@@ -1,3 +1,5 @@
+import { URL } from 'url'
+
 export default class URLString {
   constructor () {
     this.url = null

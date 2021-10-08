@@ -1,7 +1,7 @@
 import Fetcher from '../fetcher.js'
 
 export default class TestFetcher extends Fetcher {
-  async get ({ url, path, searchParams }) {
+  async get ({ url }) {
     this.log(`Call a request to ${url}`)
     return 42
   }
