@@ -1,3 +1,4 @@
+import { expect, describe, it } from '@jest/globals'
 import { fetcher, Fetcher } from '../index.js'
 import pino from 'pino'
 import { ValidationError } from '@hckrnews/error'

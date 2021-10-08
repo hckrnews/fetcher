@@ -80,7 +80,7 @@ class Fetcher {
    */
   async get ({ url, path, searchParams }) {
     const requestData = {
-      url: URLString.create({ url, path, searchParams }),
+      url: (path || searchParams) ? URLString.create({ url, path, searchParams }) : url,
       method: 'GET'
     }
     this.log(`Call a ${requestData.method} request to ${requestData.url}`)
