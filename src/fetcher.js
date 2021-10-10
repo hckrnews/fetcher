@@ -8,8 +8,6 @@ const AsyncFunction = exampleAsyncFunction.constructor
 /**
  * Base of the fetchers.
  * This fetcher just get the data from fixtures.
- *
- * @todo: move code to package
  */
 class Fetcher {
   constructor () {
@@ -80,7 +78,7 @@ class Fetcher {
    */
   async get ({ url, path, searchParams }) {
     const requestData = {
-      url: URLString.create({ url, path, searchParams }),
+      url: (path || searchParams) ? URLString.create({ url, path, searchParams }) : url,
       method: 'GET'
     }
     this.log(`Call a ${requestData.method} request to ${requestData.url}`)

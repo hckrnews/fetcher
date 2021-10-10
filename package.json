@@ -1,6 +1,6 @@
 {
     "name": "@hckrnews/fetcher",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "description": "Fetcher",
     "files": [
         "src/index.js",
@@ -39,6 +39,7 @@
         "@babel/eslint-parser": "^7.14.7",
         "@babel/plugin-transform-modules-commonjs": "^7.14.0",
         "@babel/preset-env": "^7.12.11",
+        "@hckrnews/auto-fetch": "^1.0.0",
         "@jest/globals": "^27.0.6",
         "babel-jest": "^27.2.4",
         "codecov": "^3.8.1",
