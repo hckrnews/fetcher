@@ -1,5 +1,4 @@
 import Fetcher from './fetcher.js'
-import localFetch from './local-fetcher.js'
 
 const defaultFetchers = {
   default: Fetcher
@@ -21,6 +20,5 @@ export default fetcher
 export {
   fetcher,
   defaultFetchers,
-  Fetcher,
-  localFetch
+  Fetcher
 }
