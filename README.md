@@ -1,6 +1,8 @@
 # Fetcher
 
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coveralls Status][coveralls-image]][coveralls-url] [![Scrutinizer Code Quality][scrutinizer-image]][scrutinizer-url]
+[![NPM version][npm-image]][npm-url] [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=hckrnews_fetcher&metric=coverage)](https://sonarcloud.io/summary/new_code?id=hckrnews_fetcher) [![Scrutinizer Code Quality][scrutinizer-image]][scrutinizer-url] [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=hckrnews_fetcher&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=hckrnews_fetcher) 
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=hckrnews_fetcher&metric=bugs)](https://sonarcloud.io/summary/new_code?id=hckrnews_fetcher) [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=hckrnews_fetcher&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=hckrnews_fetcher) [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=hckrnews_fetcher&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=hckrnews_fetcher) [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=hckrnews_fetcher&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=hckrnews_fetcher)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=hckrnews_fetcher&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=hckrnews_fetcher) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=hckrnews_fetcher&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=hckrnews_fetcher) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=hckrnews_fetcher&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=hckrnews_fetcher)
 
 With this package you can create fetchers.
 
