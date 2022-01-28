@@ -2,7 +2,7 @@ import { NotImplementedError, ServerError, ValidationError, NotFoundError, Timeo
 import URLString from './url-generator.js'
 import pino from 'pino'
 
-const exampleAsyncFunction = async () => {}
+const exampleAsyncFunction = async () => true
 const AsyncFunction = exampleAsyncFunction.constructor
 
 /**
@@ -87,7 +87,7 @@ class Fetcher {
 
     this.validate({ requestData, response })
 
-    return await response.json()
+    return response.json()
   }
 
   validate ({ requestData, response }) {
