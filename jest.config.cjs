@@ -5,7 +5,7 @@ module.exports = {
         '^.+\\.js?$': 'babel-jest',
     },
 
-    transformIgnorePatterns: ['node_modules/(?!(@hckrnews|node-fetch|fetch-blob)/)'],
+    transformIgnorePatterns: ['node_modules/(?!(@hckrnews|node-fetch|fetch-blob|data-uri-to-buffer|formdata-polyfill)/)'],
 
     moduleNameMapper: {
         '^@/(.*)$': '<rootDir>/src/$1',
@@ -17,4 +17,12 @@ module.exports = {
 
     collectCoverage: true,
     collectCoverageFrom: ['src/**/*.js'],
+    testResultsProcessor: 'jest-sonar-reporter',
+    reporters: [
+      'default',
+      [ 'jest-junit', {
+        outputDirectory: 'test-reports',
+        outputName: 'jest-junit.xml',
+      } ]
+    ],
 };
