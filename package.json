@@ -40,7 +40,7 @@
         "@babel/eslint-parser": "^7.16.5",
         "@babel/plugin-transform-modules-commonjs": "^7.14.0",
         "@babel/preset-env": "^7.16.11",
-        "@hckrnews/auto-fetch": "^1.1.0",
+        "@hckrnews/auto-fetch": "^1.1.1",
         "@jest/globals": "^27.4.6",
         "babel-jest": "^27.4.6",
         "codecov": "^3.8.1",
