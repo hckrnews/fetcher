@@ -74,6 +74,6 @@
     "dependencies": {
         "@hckrnews/error": "^0.3.6",
         "node-fetch": "^3.2.0",
-        "pino": "^7.6.4"
+        "pino": "^7.11.0"
     }
 }
