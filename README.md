@@ -44,7 +44,5 @@ const result = await magentoFetcher.get({ url, path, searchParams })
 [npm-image]: https://img.shields.io/npm/v/@hckrnews/fetcher.svg
 [travis-url]: https://app.travis-ci.com/hckrnews/fetcher
 [travis-image]: https://app.travis-ci.com/hckrnews/fetcher.svg?branch=main
-[coveralls-url]: https://coveralls.io/r/hckrnews/fetcher
-[coveralls-image]: https://img.shields.io/coveralls/hckrnews/fetcher/main.svg
 [scrutinizer-url]: https://scrutinizer-ci.com/g/hckrnews/fetcher/?branch=main
 [scrutinizer-image]: https://scrutinizer-ci.com/g/hckrnews/fetcher/badges/quality-score.png?b=main

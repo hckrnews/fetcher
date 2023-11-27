@@ -1,7 +1,8 @@
 {
     "name": "@hckrnews/fetcher",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "description": "Fetcher",
+    "license": "MIT",
     "files": [
         "src/index.js",
         "src/fetcher.js",
@@ -31,7 +32,6 @@
         "lint:fix": "standard src --fix",
         "test": "jest",
         "test:watch": "jest src --watch",
-        "coveralls": "jest && codecov && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
         "cpd": "node_modules/jscpd/bin/jscpd src",
         "vulnerabilities": "npm audit --production"
     },
@@ -41,23 +41,22 @@
         "@babel/plugin-transform-modules-commonjs": "^7.14.0",
         "@babel/preset-env": "^7.16.11",
         "@hckrnews/auto-fetch": "^1.1.1",
-        "@jest/globals": "^27.4.6",
-        "babel-jest": "^27.4.6",
+        "@jest/globals": "^29.0.0",
+        "babel-jest": "^29.0.0",
         "codecov": "^3.8.1",
-        "coveralls": "^3.1.0",
         "eslint": "^8.7.0",
         "esm": "^3.2.25",
-        "jest": "^27.4.7",
-        "jest-junit": "^13.0.0",
+        "jest": "^29.0.0",
+        "jest-junit": "^16.0.0",
         "jest-sonar-reporter": "^2.0.0",
         "jscpd": "^3.4.5",
-        "prettier": "^2.5.1",
-        "standard": "^16.0.3",
+        "prettier": "^3.0.0",
+        "standard": "^17.0.0",
         "standard-reporter": "^1.0.5"
     },
     "type": "module",
     "engines": {
-        "node": ">= 14"
+        "node": ">= 18"
     },
     "standard": {
         "parser": "@babel/eslint-parser",
@@ -72,8 +71,12 @@
         ]
     },
     "dependencies": {
-        "@hckrnews/error": "^0.3.6",
+        "@hckrnews/error": "^1.0.0",
         "node-fetch": "^3.2.0",
-        "pino": "^7.6.4"
+        "pino": "^8.0.0"
+    },
+    "funding": {
+        "type": "github",
+        "url": "https://github.com/sponsors/w3nl"
     }
 }
