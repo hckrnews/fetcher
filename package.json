@@ -36,10 +36,10 @@
         "vulnerabilities": "npm audit --production"
     },
     "devDependencies": {
-        "@babel/core": "^7.16.12",
+        "@babel/core": "^7.23.6",
         "@babel/eslint-parser": "^7.16.5",
         "@babel/plugin-transform-modules-commonjs": "^7.14.0",
-        "@babel/preset-env": "^7.16.11",
+        "@babel/preset-env": "^7.23.6",
         "@hckrnews/auto-fetch": "^1.1.1",
         "@jest/globals": "^29.0.0",
         "babel-jest": "^29.0.0",
