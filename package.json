@@ -1,6 +1,6 @@
 {
     "name": "@hckrnews/fetcher",
-    "version": "1.1.3",
+    "version": "1.1.4",
     "description": "Fetcher",
     "license": "MIT",
     "files": [
@@ -71,7 +71,7 @@
         ]
     },
     "dependencies": {
-        "@hckrnews/error": "^1.0.0",
+        "@hckrnews/error": "^2.0.0",
         "node-fetch": "^3.2.0",
         "pino": "^8.0.0"
     },
