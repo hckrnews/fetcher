@@ -1,4 +1,4 @@
-import { NotImplementedError, ServerError, ValidationError, NotFoundError, TimeoutError } from '@hckrnews/error'
+import { NotImplementedError, ServerError, ValidationError, NotFoundError, TimeoutError } from '@trojs/error'
 import URLString from './url-generator.js'
 import pino from 'pino'
 
