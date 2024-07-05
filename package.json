@@ -1,6 +1,6 @@
 {
     "name": "@hckrnews/fetcher",
-    "version": "1.1.6",
+    "version": "1.1.7",
     "description": "Fetcher",
     "license": "MIT",
     "files": [
@@ -43,7 +43,6 @@
         "@hckrnews/auto-fetch": "^1.1.1",
         "@jest/globals": "^29.0.0",
         "babel-jest": "^29.0.0",
-        "codecov": "^3.8.1",
         "eslint": "^8.7.0",
         "esm": "^3.2.25",
         "jest": "^29.0.0",
