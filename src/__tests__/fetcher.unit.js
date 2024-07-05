@@ -1,7 +1,7 @@
 import { expect, describe, it } from '@jest/globals'
 import { fetcher, Fetcher } from '../index.js'
 import pino from 'pino'
-import { ValidationError } from '@hckrnews/error'
+import { ValidationError } from '@trojs/error'
 import example from '../__fixtures__/example.js'
 import TestFetcher from '../__fixtures__/test-fetcher.js'
 
