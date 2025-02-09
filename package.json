@@ -70,7 +70,7 @@
         ]
     },
     "dependencies": {
-        "@trojs/error": "^4.0.0",
+        "@trojs/error": "^4.3.1",
         "node-fetch": "^3.2.0",
         "pino": "^8.0.0"
     },
